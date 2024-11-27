@@ -1,5 +1,5 @@
 # Personal Folders
-.vscode/
+/.vscode
 
 .DS_Store
 .thumbs.db

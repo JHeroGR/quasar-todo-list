@@ -2,6 +2,11 @@
 
 A Quasar Project
 
+A Todo List Application I am developing to practice Quasar Fundamentals and experience, hopefully make it come to live on iPhone and Android.
+
+## Goals
+To deploy the finished first version to test out live in the iOS/Android devices.
+
 ## Install the dependencies
 ```bash
 yarn

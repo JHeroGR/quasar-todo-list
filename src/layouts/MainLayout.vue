@@ -33,10 +33,11 @@
             size="sm"
             flat
             round
+            @add-task-list="addTaskList"
           />
         </q-item-section>
       </q-item>
-      <TodoListsList />
+      <TodoListsList ref="todoListLists" />
     </q-drawer>
 
     <q-page-container>
@@ -54,6 +55,13 @@ defineOptions({
   name: 'MainLayout',
   components: {
     CreateTodoListButton, TodoListsList
+  },
+  methods: {
+    addTaskList (val) {
+      console.log('passing task list: ' + val)
+      this.$refs.todoListLists.addNewTaskList((val))
+      console.log('done')
+    }
   }
 })
 

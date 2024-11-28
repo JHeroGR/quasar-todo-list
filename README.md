@@ -18,6 +18,8 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 - ◻️ iOS/Android Deployment Beta Live
 ---
 ### Optional
+- ◻️ Icon for each Task/Todo List
+- ◻️ Background Color for each Task/Todo List Layout
 - ◻️ Create Icon Selector for Task/Todo Lists
 - ◻️ Create Color Selector for Icons in Task/Todo Lists
 - ◻️ Dark Mode Toggle

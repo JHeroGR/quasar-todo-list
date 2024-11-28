@@ -5,12 +5,12 @@
       :key="index"
       clickable
     >
-      <q-item-section side>
+      <!-- <q-item-section side>
         <q-icon
           :name="task_list.task_list_icon"
           :color="task_list.task_list_icon_color"
         />
-      </q-item-section>
+      </q-item-section> -->
       <q-item-section
         class="text-grey-9"
         clickable
@@ -44,8 +44,8 @@ export default {
   data () {
     return {
       task_lists: [
-        { id: 1, task_list_icon: 'shopping_bag', task_list_icon_color: 'red', task_list_name: 'Go Shopping', task_list_count: 12 },
-        { id: 2, task_list_icon: 'fitness_center', task_list_icon_color: 'green', task_list_name: 'Go Workout', task_list_count: 5 }
+        { id: 1, task_list_name: 'Go Shopping', task_list_count: 12 },
+        { id: 2, task_list_name: 'Go Workout', task_list_count: 5 }
       ]
     }
   },
@@ -53,8 +53,6 @@ export default {
     addNewTaskList (data) {
       console.log('hit the addNewTaskList: ' + data)
       this.task_lists.push({
-        task_list_icon: 'fitness_center',
-        task_list_icon_color: 'black',
         task_list_name: data,
         task_list_count: 0
       })

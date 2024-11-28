@@ -1,38 +1,26 @@
-# Quasar App (quasar-todo-list)
-
-A Quasar Project
+# Quasar Todo App (quasar-todo-list)
 
 A Todo List Application I am developing to practice Quasar Fundamentals and experience, hopefully make it come to live on iPhone and Android.
 
 ## Goals
-To deploy the finished first version to test out live in the iOS/Android devices.
+- To learn the Quasar Framework so that I can understand App development and design
+- To deploy the finished first version to test out live in the iOS/Android devices.
 
-## Install the dependencies
-```bash
-yarn
-# or
-npm install
-```
+### Checklist
+- ✅ Created the App (Nov. 24, 2024)
+- ✅ Create Test Data for Tasks/Todos and Tasks/Todo Lists (Nov. 27, 2024)
+- ✅ Create Add methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
+- ✅ Create Update methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
+- ✅ Create Delete methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
+- ◻️ Create Read methods for Task/Todo Lists to read each Task/Todo per List
+- ◻️ Create Dynamic Layout to generate Task/Todo per selected List
+- ◻️ iOS/Android Deployment Test
+- ◻️ iOS/Android Deployment Beta Live
+---
+### Optional
+- ◻️ Create Icon Selector for Task/Todo Lists
+- ◻️ Create Color Selector for Icons in Task/Todo Lists
+- ◻️ Dark Mode Toggle
 
-### Start the app in development mode (hot-code reloading, error reporting, etc.)
-```bash
-quasar dev
-```
-
-
-### Lint the files
-```bash
-yarn lint
-# or
-npm run lint
-```
-
-
-
-### Build the app for production
-```bash
-quasar build
-```
-
-### Customize the configuration
-See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-vite/quasar-config-js).
+### Feedback
+Feedback and critiques are always welcome

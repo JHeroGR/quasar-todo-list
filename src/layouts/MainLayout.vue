@@ -12,7 +12,7 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Quasar Todo App
         </q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -22,7 +22,6 @@
       show-if-above
       bordered
     >
-      <q-toolbar class="bg-primary" />
       <q-item class="bg-grey-3">
         <q-item-section>
           Lists
@@ -37,7 +36,10 @@
           />
         </q-item-section>
       </q-item>
-      <TodoListsList ref="todoListLists" />
+      <TodoListsList
+        ref="todoListLists"
+        clickable
+      />
     </q-drawer>
 
     <q-page-container>
@@ -58,9 +60,7 @@ defineOptions({
   },
   methods: {
     addTaskList (val) {
-      console.log('passing task list: ' + val)
       this.$refs.todoListLists.addNewTaskList((val))
-      console.log('done')
     }
   }
 })

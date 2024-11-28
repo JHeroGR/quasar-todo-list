@@ -3,6 +3,7 @@
     <q-item
       v-for="(task, index) in tasks"
       :key="index"
+      clickable
     >
       <q-item-section side>
         <UpdateTodoCheckbox
@@ -10,7 +11,9 @@
           @click="updateCheckbox(task)"
         />
       </q-item-section>
-      <q-item-section>
+      <q-item-section
+        clickable
+      >
         {{ task.task_name }}
       </q-item-section>
       <q-item-section side>
@@ -22,11 +25,21 @@
           @click="deleteTask(index)"
         />
       </q-item-section>
+      <q-item-section side>
+        <EditTodoButton
+          flat
+          round
+          size="sm"
+          icon="edit"
+          @click="editTask(index)"
+        />
+      </q-item-section>
     </q-item>
   </q-list>
 </template>
 
 <script>
+import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
@@ -34,7 +47,8 @@ export default {
   // name: 'ComponentName',
   components: {
     UpdateTodoCheckbox,
-    DeleteTodoButton
+    DeleteTodoButton,
+    EditTodoButton
   },
   props: {
     newTask: {
@@ -65,6 +79,23 @@ export default {
         task_done: false
       })
       console.log('added')
+    },
+    editTask (val) {
+      this.$q.dialog({
+        title: 'Edit Name',
+        prompt: {
+          model: this.tasks.at(val).task_name.toString(),
+          type: 'text'
+        },
+        cancel: true
+      }).onOk((newTodoName) => {
+        this.tasks[val].task_name = newTodoName
+        this.$q.notify({
+          message: 'Todo Name Updated',
+          icon: 'check',
+          color: 'positive'
+        })
+      })
     }
   }
 }

@@ -1,6 +1,5 @@
 <template>
   <q-btn @click="handleButtonClicked" />
-  <!-- <q-color /> -->
 </template>
 
 <script>
@@ -11,7 +10,7 @@ export default {
   methods: {
     handleButtonClicked () {
       this.$q.dialog({
-        title: 'Create Todo',
+        title: 'Create Todo List Name',
         prompt: {
           model: '',
           type: 'text'
@@ -28,7 +27,6 @@ export default {
     },
     createTodoList (data) {
       if (data.trim() === '') {
-        console.log('task list name cannot be empty')
         this.$q.notify({
           message: 'task list name cannot be empty!',
           icon: 'warning',
@@ -36,7 +34,6 @@ export default {
         })
         return
       }
-      console.log('adding task list: ' + data + '-' + this.selectedColor)
       this.$emit('add-task-list', data)
       this.$q.notify({
         message: 'Todo List Created',

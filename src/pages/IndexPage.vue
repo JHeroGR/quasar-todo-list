@@ -19,11 +19,11 @@
         bordered
       />
     </q-card>
-    <div class="col-xs-3">
+    <div class="bg-dark col-xs-3">
       <q-toolbar class="bg-primary">
         <CreateTodoButton
           fab
-          style="margin-bottom: -42px;"
+          style="margin-bottom: -150px;"
           class="q-ml-lg"
           color="secondary"
           icon="add"

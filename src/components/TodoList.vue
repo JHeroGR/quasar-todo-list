@@ -43,7 +43,7 @@ import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
-import Task from 'src/utils/Task.js'
+import Task from 'src/utils/TaskList.js'
 
 export default {
   // name: 'ComponentName',

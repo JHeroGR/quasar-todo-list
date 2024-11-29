@@ -49,13 +49,13 @@ export default defineComponent({
     return {
       search: ''
     }
-  },
-  methods: {
-    addTask (val) {
-      console.log('passing task')
-      this.$refs.todoList.addNewTask((val))
-      console.log('done')
-    }
   }
+  // methods: {
+  //   addTask (val) {
+  //     console.log('passing task')
+  //     this.$refs.todoList.addNewTask((val))
+  //     console.log('done')
+  //   }
+  // }
 })
 </script>

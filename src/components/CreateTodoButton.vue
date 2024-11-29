@@ -5,7 +5,7 @@
 <script>
 export default {
   // name: 'ComponentName',
-  emits: ['add-task'],
+  // emits: ['add-task'],
   methods: {
     handleButtonClicked () {
       this.$q.dialog({
@@ -35,7 +35,7 @@ export default {
         return
       }
       console.log('adding task: ' + data)
-      this.$emit('add-task', data)
+      // this.$emit('add-task', data)
       console.log('passed task: ' + data)
 
       this.$q.notify({

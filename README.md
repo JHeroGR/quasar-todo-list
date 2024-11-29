@@ -6,13 +6,14 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 - To learn the Quasar Framework so that I can understand App development and design
 - To deploy the finished first version to test out live in the iOS/Android devices.
 
-### Checklist
+## Checklist
 - ✅ Created the App (Nov. 24, 2024)
 - ✅ Create Test Data for Tasks/Todos and Tasks/Todo Lists (Nov. 27, 2024)
 - ✅ Create Add methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
 - ✅ Create Update methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
 - ✅ Create Delete method and Component for Tasks/Todos (Nov. 27, 2024)
 - ✅ Create Task/Todo object (Nov. 28, 2024)
+
 <hr>
 
 - ◻️ Create Delete method and Component for Task/Todo Lists

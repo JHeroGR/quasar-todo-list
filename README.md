@@ -13,11 +13,11 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 - ✅ Create Update methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024)
 - ✅ Create Delete method and Component for Tasks/Todos (Nov. 27, 2024)
 - ✅ Create Task/Todo object (Nov. 28, 2024)
+- ✅ Create Read method for Tasks/Todos (Nov. 28, 2024)
 
 <hr>
 
 - ◻️ Create Delete method and Component for Task/Todo Lists
-- ◻️ Create Read method for Tasks/Todos
 - ◻️ Create Read methods for Task/Todo Lists to read each Task/Todo per List
 - ◻️ Create Dynamic Layout to generate Task/Todo per selected List
 - ◻️ iOS/Android Deployment Test

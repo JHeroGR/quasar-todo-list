@@ -1,6 +1,6 @@
 <template>
   <q-page class="row">
-    <q-card class="col-xs-9">
+    <q-card class="col-xs-10">
       <q-toolbar>
         <q-input
           dense
@@ -19,12 +19,12 @@
         bordered
       />
     </q-card>
-    <div class="bg-dark col-xs-3">
+    <div class="bg-dark col-xs-2">
       <q-toolbar class="bg-primary">
         <CreateTodoButton
           fab
           style="margin-bottom: -150px;"
-          class="q-ml-lg"
+          class="q-mr-lg"
           color="secondary"
           icon="add"
           @add-task="addTask"

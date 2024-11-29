@@ -7,14 +7,14 @@
     >
       <q-item-section side>
         <UpdateTodoCheckbox
-          :model-value="task.task_done"
+          :model-value="task.done"
           @click="updateCheckbox(task)"
         />
       </q-item-section>
       <q-item-section
         clickable
       >
-        {{ task.task_name }}
+        {{ task.name }}
       </q-item-section>
       <q-item-section side>
         <DeleteTodoButton
@@ -43,6 +43,8 @@ import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
+import Task from 'src/utils/Task.js'
+
 export default {
   // name: 'ComponentName',
   components: {
@@ -50,46 +52,34 @@ export default {
     DeleteTodoButton,
     EditTodoButton
   },
-  props: {
-    newTask: {
-      type: String,
-      default: ''
-    }
-  },
   data () {
     return {
-      tasks: [
-        { task_name: 'Go Shopping', task_done: false },
-        { task_name: 'Get Car Fixed', task_done: false },
-        { task_name: 'Do Homework', task_done: false }
-      ]
+      tasks: Task.readTasks()
     }
   },
   methods: {
     updateCheckbox (val) {
-      val.task_done = !val.task_done
+      val.done = !val.done
     },
     deleteTask (val) {
       this.tasks.splice(val, 1)
     },
     addNewTask (val) {
       console.log('hit the addNewTask: ' + val)
-      this.tasks.push({
-        task_name: val,
-        task_done: false
-      })
+      Task.createTask(val)
       console.log('added')
+      this.tasks = Task.readTasks()
     },
     editTask (val) {
       this.$q.dialog({
         title: 'Edit Name',
         prompt: {
-          model: this.tasks.at(val).task_name.toString(),
+          model: this.tasks.at(val).name.toString(),
           type: 'text'
         },
         cancel: true
       }).onOk((newTodoName) => {
-        this.tasks[val].task_name = newTodoName
+        this.tasks[val].name = newTodoName
         this.$q.notify({
           message: 'Todo Name Updated',
           icon: 'check',

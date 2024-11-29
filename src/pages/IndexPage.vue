@@ -14,7 +14,7 @@
           </template>
         </q-input>
       </q-toolbar>
-      <TodosList
+      <TodoList
         ref="todoList"
         bordered
       />
@@ -36,13 +36,13 @@
 
 <script>
 import CreateTodoButton from 'src/components/CreateTodoButton.vue'
-import TodosList from 'src/components/TodosList.vue'
+import TodoList from 'src/components/TodoList.vue'
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   components: {
     CreateTodoButton,
-    TodosList
+    TodoList
   },
   // name: 'IndexPage',
   data () {

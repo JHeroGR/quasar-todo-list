@@ -22,7 +22,7 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 - ◻️ Create Dynamic Layout to generate Task/Todo per selected List
 - ◻️ iOS/Android Deployment Test
 - ◻️ iOS/Android Deployment Beta Live
----
+
 ### Optional
 - ◻️ Icon for each Task/Todo List
 - ◻️ Background Color for each Task/Todo List Layout

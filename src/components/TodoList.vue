@@ -43,8 +43,6 @@ import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
-import Task from 'src/utils/TaskList.js'
-
 export default {
   // name: 'ComponentName',
   components: {
@@ -52,23 +50,27 @@ export default {
     DeleteTodoButton,
     EditTodoButton
   },
-  data () {
-    return {
-      tasks: Task.readTasks()
+  props: {
+    tasks: {
+      type: Array,
+      required: true
     }
   },
   methods: {
+    getTasks () {
+      this.$refs.todoListsList.getTaskList()
+    },
     updateCheckbox (val) {
       val.done = !val.done
     },
     deleteTask (val) {
-      this.tasks.splice(val, 1)
+      // this.tasks.splice(val, 1)
     },
     addNewTask (val) {
       console.log('hit the addNewTask: ' + val)
-      Task.createTask(val)
+      // Task.createTask(val)
       console.log('added')
-      this.tasks = Task.readTasks()
+      // this.tasks = Task.readTasks()
     },
     editTask (val) {
       this.$q.dialog({
@@ -79,7 +81,7 @@ export default {
         },
         cancel: true
       }).onOk((newTodoName) => {
-        this.tasks[val].name = newTodoName
+        // this.tasks[val].name = newTodoName
         this.$q.notify({
           message: 'Todo Name Updated',
           icon: 'check',

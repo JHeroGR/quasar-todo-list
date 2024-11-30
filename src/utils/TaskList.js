@@ -17,7 +17,14 @@ const TaskList = {
     }
   ],
 
-  readTasks () {
+  // CRUD Methods for Tasks
+  readTasks (val) {
+    return this.lists[val].tasks
+  },
+
+  // CRUD Methods for Task Lists
+  readTaskLists () {
+    console.log(this.lists)
     return this.lists
   }
 }

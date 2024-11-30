@@ -15,7 +15,7 @@
         </q-input>
       </q-toolbar>
       <TodoList
-        ref="todoList"
+        @get-todo-list="getTaskList"
         bordered
       />
     </q-card>
@@ -39,15 +39,25 @@ import CreateTodoButton from 'src/components/CreateTodoButton.vue'
 import TodoList from 'src/components/TodoList.vue'
 import { defineComponent } from 'vue'
 
+import TaskList from 'src/utils/TaskList'
+
 export default defineComponent({
   components: {
     CreateTodoButton,
     TodoList
   },
   // name: 'IndexPage',
-  data () {
-    return {
-      search: ''
+  props: {
+    tasks: {
+      type: Array,
+      default: this.getTaskList('Shopping'),
+      required: true
+    }
+  },
+  methods: {
+    getTaskList (val) {
+      console.log(TaskList.readTasks(val))
+      console.log('this: ' + val)
     }
   }
   // methods: {

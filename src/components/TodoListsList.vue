@@ -4,6 +4,7 @@
       v-for="(task_list, index) in task_lists"
       :key="index"
       clickable
+      @click="getTaskList(task_list.category)"
     >
       <!-- <q-item-section side>
         <q-icon
@@ -13,12 +14,11 @@
       </q-item-section> -->
       <q-item-section
         class="text-grey-9"
-        clickable
       >
-        {{ task_list.task_list_name }}
+        {{ task_list.category }}
       </q-item-section>
       <q-item-section side>
-        {{ task_list.task_list_count }}
+        {{ task_list.tasks.length }}
       </q-item-section>
       <q-item-section side>
         <EditTodoListButton
@@ -36,20 +36,30 @@
 <script>
 import EditTodoListButton from './EditTodoListButton.vue'
 
+import TaskList from 'src/utils/TaskList'
+
 export default {
   // name: 'ComponentName',
+  emits: ['get-task-list'],
   components: {
     EditTodoListButton
   },
   data () {
     return {
-      task_lists: [
-        { id: 1, task_list_name: 'Go Shopping', task_list_count: 12 },
-        { id: 2, task_list_name: 'Go Workout', task_list_count: 5 }
-      ]
+      task_lists: this.getTaskLists()
+      // task_lists: [
+      //   { id: 1, task_list_name: 'Go Shopping', task_list_count: 12 },
+      //   { id: 2, task_list_name: 'Go Workout', task_list_count: 5 }
+      // ]
     }
   },
   methods: {
+    getTaskList (val) {
+      this.$emit('get-task-list', val)
+    },
+    getTaskLists () {
+      return TaskList.readTaskLists()
+    },
     addNewTaskList (data) {
       console.log('hit the addNewTaskList: ' + data)
       this.task_lists.push({

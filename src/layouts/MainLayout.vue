@@ -59,9 +59,9 @@ defineOptions({
     CreateTodoListButton, TodoListsList
   },
   methods: {
-    addTaskList (val) {
-      this.$refs.todoListLists.addNewTaskList((val))
-    }
+    // addTaskList (val) {
+    //   this.$refs.todoListLists.addNewTaskList((val))
+    // }
   }
 })
 

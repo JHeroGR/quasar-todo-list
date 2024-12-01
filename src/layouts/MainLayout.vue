@@ -37,7 +37,7 @@
         </q-item-section>
       </q-item>
       <TodoListsList
-        @get-task-list-category="getTaskList"
+        @get-task-list-category="provideTaskListCategory"
         clickable
       />
     </q-drawer>
@@ -51,6 +51,8 @@
 <script>
 import TodoListsList from 'src/components/TodoListsList.vue'
 import CreateTodoListButton from 'src/components/CreateTodoListButton.vue'
+
+import { provide } from 'vue'
 // import { ref } from 'vue'
 
 export default {
@@ -65,17 +67,13 @@ export default {
     }
   },
   methods: {
-    getTaskList (val) {
-      console.log('hi dad: ' + JSON.stringify(val))
-      const todoList = this.$refs.todoList
-      if (todoList && todoList.getTasks) {
-        todoList.getTasks(val)
-      } else {
-        console.error('TodoList ref is not available or does not have a getTasks method')
-      }
-    },
     toggleLeftDrawer () {
       this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+    provideTaskListCategory (category) {
+      this.category = category // Update category
+      provide('category', category) // Provide the updated category
+      console.log('Category provided: ', category)
     }
   }
 }

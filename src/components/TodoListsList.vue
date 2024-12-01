@@ -54,10 +54,7 @@ export default {
       return TaskList.readTaskLists()
     },
     getTaskListCategory (val) {
-      console.log(val)
-      const tasks = TaskList.readTasks(val)
-      console.log(tasks)
-      this.$emit('get-task-list-category', tasks)
+      this.$emit('get-task-list-category', val)
     }
   }
 }

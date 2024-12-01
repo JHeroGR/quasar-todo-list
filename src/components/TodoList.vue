@@ -43,6 +43,8 @@ import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
+import { inject } from 'vue'
+
 export default {
   // name: 'ComponentName',
   components: {
@@ -57,8 +59,9 @@ export default {
     }
   },
   methods: {
-    getTasks (val) {
-      console.log('hi dad\'s brother')
+    getTasks () {
+      console.log('Injected: ' + this.category)
+      // const getTasks = inject('getTasks')
     },
     updateCheckbox (val) {
       // val.done = !val.done
@@ -88,6 +91,12 @@ export default {
       //     color: 'positive'
       //   })
       // })
+    },
+    setup () {
+      console.log('hit')
+      const category = inject('category')
+      console.log('category: ' + category)
+      return { category }
     }
   }
 }

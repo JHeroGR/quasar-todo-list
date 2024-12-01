@@ -57,37 +57,37 @@ export default {
     }
   },
   methods: {
-    getTasks () {
-      this.$refs.todoListsList.getTaskList()
+    getTasks (val) {
+      console.log('hi dad\'s brother')
     },
     updateCheckbox (val) {
-      val.done = !val.done
+      // val.done = !val.done
     },
     deleteTask (val) {
       // this.tasks.splice(val, 1)
     },
-    addNewTask (val) {
-      console.log('hit the addNewTask: ' + val)
-      // Task.createTask(val)
-      console.log('added')
-      // this.tasks = Task.readTasks()
-    },
+    // addNewTask (val) {
+    //   console.log('hit the addNewTask: ' + val)
+    //   // Task.createTask(val)
+    //   console.log('added')
+    //   // this.tasks = Task.readTasks()
+    // },
     editTask (val) {
-      this.$q.dialog({
-        title: 'Edit Name',
-        prompt: {
-          model: this.tasks.at(val).name.toString(),
-          type: 'text'
-        },
-        cancel: true
-      }).onOk((newTodoName) => {
-        // this.tasks[val].name = newTodoName
-        this.$q.notify({
-          message: 'Todo Name Updated',
-          icon: 'check',
-          color: 'positive'
-        })
-      })
+      // this.$q.dialog({
+      //   title: 'Edit Name',
+      //   prompt: {
+      //     model: this.tasks.at(val).name.toString(),
+      //     type: 'text'
+      //   },
+      //   cancel: true
+      // }).onOk((newTodoName) => {
+      //   // this.tasks[val].name = newTodoName
+      //   this.$q.notify({
+      //     message: 'Todo Name Updated',
+      //     icon: 'check',
+      //     color: 'positive'
+      //   })
+      // })
     }
   }
 }

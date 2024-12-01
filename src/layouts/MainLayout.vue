@@ -37,7 +37,7 @@
         </q-item-section>
       </q-item>
       <TodoListsList
-        ref="todoListLists"
+        @get-task-list-category="getTaskList"
         clickable
       />
     </q-drawer>
@@ -48,26 +48,35 @@
   </q-layout>
 </template>
 
-<script setup>
+<script>
 import TodoListsList from 'src/components/TodoListsList.vue'
 import CreateTodoListButton from 'src/components/CreateTodoListButton.vue'
-import { ref } from 'vue'
+// import { ref } from 'vue'
 
-defineOptions({
-  name: 'MainLayout',
+export default {
+  // name: 'MainLayout',
+  // emits: ['retrieve-task-list'],
   components: {
     CreateTodoListButton, TodoListsList
   },
+  data () {
+    return {
+      leftDrawerOpen: false
+    }
+  },
   methods: {
-    // addTaskList (val) {
-    //   this.$refs.todoListLists.addNewTaskList((val))
-    // }
+    getTaskList (val) {
+      console.log('hi dad: ' + JSON.stringify(val))
+      const todoList = this.$refs.todoList
+      if (todoList && todoList.getTasks) {
+        todoList.getTasks(val)
+      } else {
+        console.error('TodoList ref is not available or does not have a getTasks method')
+      }
+    },
+    toggleLeftDrawer () {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    }
   }
-})
-
-const leftDrawerOpen = ref(false)
-
-function toggleLeftDrawer () {
-  leftDrawerOpen.value = !leftDrawerOpen.value
 }
 </script>

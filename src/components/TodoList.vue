@@ -44,6 +44,7 @@ import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
 import { inject } from 'vue'
+import TaskList from 'src/utils/TaskList'
 
 export default {
   // name: 'ComponentName',
@@ -55,13 +56,20 @@ export default {
   props: {
     tasks: {
       type: Array,
+      default: this.getTasks(),
       required: true
     }
+  },
+  setup () {
+    console.log('hit')
+    const category = inject('category')
+    console.log('Injected category: ' + category.value)
+    return { category }
   },
   methods: {
     getTasks () {
       console.log('Injected: ' + this.category)
-      // const getTasks = inject('getTasks')
+      return TaskList.readTasks(this.category)
     },
     updateCheckbox (val) {
       // val.done = !val.done
@@ -69,12 +77,6 @@ export default {
     deleteTask (val) {
       // this.tasks.splice(val, 1)
     },
-    // addNewTask (val) {
-    //   console.log('hit the addNewTask: ' + val)
-    //   // Task.createTask(val)
-    //   console.log('added')
-    //   // this.tasks = Task.readTasks()
-    // },
     editTask (val) {
       // this.$q.dialog({
       //   title: 'Edit Name',
@@ -91,12 +93,6 @@ export default {
       //     color: 'positive'
       //   })
       // })
-    },
-    setup () {
-      console.log('hit')
-      const category = inject('category')
-      console.log('category: ' + category)
-      return { category }
     }
   }
 }

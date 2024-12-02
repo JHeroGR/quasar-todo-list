@@ -52,7 +52,7 @@
 import TodoListsList from 'src/components/TodoListsList.vue'
 import CreateTodoListButton from 'src/components/CreateTodoListButton.vue'
 
-import { provide } from 'vue'
+import { provide, ref } from 'vue'
 // import { ref } from 'vue'
 
 export default {
@@ -61,19 +61,26 @@ export default {
   components: {
     CreateTodoListButton, TodoListsList
   },
-  data () {
-    return {
-      leftDrawerOpen: false
-    }
-  },
-  methods: {
-    toggleLeftDrawer () {
-      this.leftDrawerOpen = !this.leftDrawerOpen
-    },
-    provideTaskListCategory (category) {
-      this.category = category // Update category
-      provide('category', category) // Provide the updated category
+  setup () {
+    const category = ref(null)
+    const leftDrawerOpen = ref(false)
+
+    provide('category', category)
+
+    const provideTaskListCategory = (newCategory) => {
+      category.value = newCategory
       console.log('Category provided: ', category)
+    }
+
+    const toggleLeftDrawer = () => {
+      leftDrawerOpen.value = !leftDrawerOpen.value
+    }
+
+    return {
+      category,
+      provideTaskListCategory,
+      leftDrawerOpen,
+      toggleLeftDrawer
     }
   }
 }

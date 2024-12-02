@@ -65,12 +65,13 @@ export default {
     const category = ref(null)
     const leftDrawerOpen = ref(false)
 
-    provide('category', category)
-
     const provideTaskListCategory = (newCategory) => {
       category.value = newCategory
-      console.log('Category provided: ', category)
     }
+
+    provide('category', category)
+
+    console.log('Category provided: ', category)
 
     const toggleLeftDrawer = () => {
       leftDrawerOpen.value = !leftDrawerOpen.value

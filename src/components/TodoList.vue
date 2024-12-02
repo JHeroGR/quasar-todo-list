@@ -56,14 +56,18 @@ export default {
   props: {
     tasks: {
       type: Array,
-      default: this.getTasks(),
       required: true
     }
   },
   setup () {
-    console.log('hit')
     const category = inject('category')
-    console.log('Injected category: ' + category.value)
+
+    if (category.value === null) {
+      console.warn('Category was not provided')
+    } else {
+      console.log('Injected category: ' + JSON.stringify(category))
+    }
+
     return { category }
   },
   methods: {

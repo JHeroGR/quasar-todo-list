@@ -13,7 +13,7 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 - ✅ Create Read method for Tasks/Todos (Nov. 28, 2024)
 - ✅ Create Read methods for Task/Todo Lists to read each Task/Todo per List (Dec. 9, 2024)
 - ✅ Create Dynamic Layout to generate Task/Todo per selected List (Dec. 9, 2024)
-- ✅ - Create a Read First method for first Tasks/Todo Lists in data as a fallback if the route is undefined (Dec. 9, 2024)
+- ✅ Create a Read First method for first Tasks/Todo Lists in data as a fallback if the route is undefined (Dec. 9, 2024)
 
 <hr>
 

@@ -6,12 +6,6 @@
       clickable
       @click="getTaskListCategory(task_list.category)"
     >
-      <!-- <q-item-section side>
-        <q-icon
-          :name="task_list.task_list_icon"
-          :color="task_list.task_list_icon_color"
-        />
-      </q-item-section> -->
       <q-item-section
         class="text-grey-9"
       >
@@ -34,16 +28,17 @@
 </template>
 
 <script>
+// import { provide } from 'vue'
 import EditTodoListButton from './EditTodoListButton.vue'
 
 import TaskList from 'src/utils/TaskList'
 
 export default {
   // name: 'ComponentName',
-  emits: ['get-task-list-category'],
   components: {
     EditTodoListButton
   },
+  emits: ['category-selected'],
   data () {
     return {
       task_lists: this.getTaskLists()
@@ -54,7 +49,8 @@ export default {
       return TaskList.readTaskLists()
     },
     getTaskListCategory (val) {
-      this.$emit('get-task-list-category', val)
+      this.$emit('category-selected', val)
+      // console.log('hit')
     }
   }
 }

@@ -1,7 +1,7 @@
 <template>
   <q-list>
     <q-item
-      v-for="(task, index) in tasks"
+      v-for="(task, index) in getTasks"
       :key="index"
       clickable
     >
@@ -43,7 +43,6 @@ import EditTodoButton from './EditTodoButton.vue'
 import DeleteTodoButton from './DeleteTodoButton.vue'
 import UpdateTodoCheckbox from './UpdateTodoCheckbox.vue'
 
-import { inject } from 'vue'
 import TaskList from 'src/utils/TaskList'
 
 export default {
@@ -54,27 +53,24 @@ export default {
     EditTodoButton
   },
   props: {
-    tasks: {
-      type: Array,
-      required: true
+    // eslint-disable-next-line vue/require-default-prop
+    category: {
+      type: String,
+      required: false
     }
   },
-  setup () {
-    const category = inject('category')
-
-    if (category.value === null) {
-      console.warn('Category was not provided')
-    } else {
-      console.log('Injected category: ' + JSON.stringify(category))
+  computed: {
+    getTasks () {
+      const tasksFrom = this.$route.params.category || TaskList.readFirstTaskListCategory()
+      return TaskList.readTasks(tasksFrom)
     }
-
-    return { category }
   },
   methods: {
-    getTasks () {
-      console.log('Injected: ' + this.category)
-      return TaskList.readTasks(this.category)
-    },
+    // getTasks () {
+    //   const localCategory = this.category || this.$route.params.category || 'Shopping'
+    //   console.log(localCategory, this.category, this.$route.params.category)
+    //   return TaskList.readTasks(localCategory)
+    // },
     updateCheckbox (val) {
       // val.done = !val.done
     },

@@ -37,8 +37,8 @@
         </q-item-section>
       </q-item>
       <TodoListsList
-        @get-task-list-category="provideTaskListCategory"
         clickable
+        @category-selected="categorySelected"
       />
     </q-drawer>
 
@@ -52,36 +52,31 @@
 import TodoListsList from 'src/components/TodoListsList.vue'
 import CreateTodoListButton from 'src/components/CreateTodoListButton.vue'
 
-import { provide, ref } from 'vue'
-// import { ref } from 'vue'
+// import TaskList from 'src/utils/TaskList'
 
 export default {
   // name: 'MainLayout',
-  // emits: ['retrieve-task-list'],
   components: {
     CreateTodoListButton, TodoListsList
   },
-  setup () {
-    const category = ref(null)
-    const leftDrawerOpen = ref(false)
-
-    const provideTaskListCategory = (newCategory) => {
-      category.value = newCategory
-    }
-
-    provide('category', category)
-
-    console.log('Category provided: ', category)
-
-    const toggleLeftDrawer = () => {
-      leftDrawerOpen.value = !leftDrawerOpen.value
-    }
-
+  data () {
     return {
-      category,
-      provideTaskListCategory,
-      leftDrawerOpen,
-      toggleLeftDrawer
+      selectedCategory: null,
+      leftDrawerOpen: false
+    }
+  },
+  methods: {
+    categorySelected (val) {
+      this.selectedCategory = val
+      console.log('Main Layout: ' + this.selectedCategory)
+      this.$router.push({ name: 'Category', params: { category: this.selectedCategory } })
+      this.leftDrawerOpen = false
+    },
+    toggleLeftDrawer () {
+      this.leftDrawerOpen = !this.leftDrawerOpen
+    },
+    addTaskList () {
+      // console.log('hit')
     }
   }
 }

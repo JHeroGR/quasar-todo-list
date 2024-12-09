@@ -9,9 +9,6 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 ## Checklist
 - ✅ Created the App (Nov. 24, 2024)
 - ✅ Create Test Data for Tasks/Todos and Tasks/Todo Lists (Nov. 27, 2024)
-- ◻️ Create Add methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024) -> Rewriting
-- ◻️ Create Update methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024) -> Rewriting
-- ◻️ Create Delete method and Component for Tasks/Todos (Nov. 27, 2024)
 - ✅ Create Task/Todo object (Nov. 28, 2024)
 - ✅ Create Read method for Tasks/Todos (Nov. 28, 2024)
 - ✅ Create Read methods for Task/Todo Lists to read each Task/Todo per List (Dec. 9, 2024)
@@ -20,6 +17,9 @@ A Todo List Application I am developing to practice Quasar Fundamentals and expe
 
 <hr>
 
+- ◻️ Create Add methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024) -> Rewriting
+- ◻️ Create Update methods and Components for Tasks/Todos and Task/Todo Lists (Nov. 27, 2024) -> Rewriting
+- ◻️ Create Delete method and Component for Tasks/Todos (Nov. 27, 2024) -> Rewriting
 - ◻️ Create Delete method and Component for Task/Todo Lists
 - ◻️ iOS/Android Deployment Test
 - ◻️ iOS/Android Deployment Beta Live

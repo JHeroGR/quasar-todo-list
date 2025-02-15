@@ -66,11 +66,6 @@ export default {
     }
   },
   methods: {
-    // getTasks () {
-    //   const localCategory = this.category || this.$route.params.category || 'Shopping'
-    //   console.log(localCategory, this.category, this.$route.params.category)
-    //   return TaskList.readTasks(localCategory)
-    // },
     updateCheckbox (val) {
       // val.done = !val.done
     },

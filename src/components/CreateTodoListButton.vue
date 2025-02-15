@@ -6,7 +6,7 @@
 
 export default {
   // name: 'ComponentName',
-  // emits: ['add-task-list'],
+  emits: ['add-task-list'],
   methods: {
     handleButtonClicked () {
       this.$q.dialog({
@@ -34,12 +34,13 @@ export default {
         })
         return
       }
-      // this.$emit('add-task-list', data)
       this.$q.notify({
         message: 'Todo List Created',
         icon: 'check',
         color: 'positive'
       })
+      console.log(data)
+      this.$emit('add-task-list', data)
     }
   }
 }

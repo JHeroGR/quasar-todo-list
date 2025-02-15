@@ -52,7 +52,7 @@
 import TodoListsList from 'src/components/TodoListsList.vue'
 import CreateTodoListButton from 'src/components/CreateTodoListButton.vue'
 
-// import TaskList from 'src/utils/TaskList'
+import TaskList from 'src/utils/TaskList'
 
 export default {
   // name: 'MainLayout',
@@ -68,15 +68,16 @@ export default {
   methods: {
     categorySelected (val) {
       this.selectedCategory = val
-      console.log('Main Layout: ' + this.selectedCategory)
       this.$router.push({ name: 'Category', params: { category: this.selectedCategory } })
       this.leftDrawerOpen = false
     },
     toggleLeftDrawer () {
       this.leftDrawerOpen = !this.leftDrawerOpen
     },
-    addTaskList () {
-      // console.log('hit')
+    addTaskList (data) {
+      console.log('hit: add task list function: ' + data)
+      TaskList.createTaskList(data)
+      console.log('success')
     }
   }
 }

@@ -50,7 +50,6 @@ export default {
     },
     getTaskListCategory (val) {
       this.$emit('category-selected', val)
-      // console.log('hit')
     }
   }
 }

@@ -1,6 +1,13 @@
 const TaskList = {
   lists: [
     {
+      category: 'Shopping',
+      tasks: [
+        { name: 'Tomatoes', done: false },
+        { name: 'Bananas', done: false }
+      ]
+    },
+    {
       category: 'Christmas Wish List',
       tasks: [
         { name: 'Music', done: false }
@@ -12,13 +19,6 @@ const TaskList = {
         { name: 'Pushups', done: false },
         { name: 'Sit Ups', done: false },
         { name: 'Burpees', done: false }
-      ]
-    },
-    {
-      category: 'Shopping',
-      tasks: [
-        { name: 'Tomatoes', done: false },
-        { name: 'Bananas', done: false }
       ]
     }
   ],
@@ -41,14 +41,25 @@ const TaskList = {
       return null
     }
 
-    console.log(category)
-
     return category.tasks
   },
 
   // CRUD Methods for Task Lists
   readTaskLists () {
     return this.lists
+  },
+
+  createTaskList (categoryName) {
+    this.lists.push(
+      {
+        category: categoryName,
+        tasks: {
+          name: 'Write your list here',
+          done: false
+        }
+      }
+    )
+    console.log('success')
   }
 }
 

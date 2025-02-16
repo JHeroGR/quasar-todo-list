@@ -60,6 +60,19 @@ const TaskList = {
       }
     )
     console.log('success')
+    console.log('list: ' + this.lists)
+  },
+
+  createTask (categoryName, taskName) {
+    this.lists.push(
+      {
+        category: categoryName,
+        tasks: {
+          name: taskName,
+          done: false
+        }
+      }
+    )
   }
 }
 

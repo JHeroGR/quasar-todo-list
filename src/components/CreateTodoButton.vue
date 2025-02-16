@@ -3,9 +3,9 @@
 </template>
 
 <script>
+// import TaskList from 'src/utils/TaskList'
+
 export default {
-  // name: 'ComponentName',
-  // emits: ['add-task'],
   methods: {
     handleButtonClicked () {
       this.$q.dialog({
@@ -36,6 +36,7 @@ export default {
       }
       console.log('adding task: ' + data)
       // this.$emit('add-task', data)
+
       console.log('passed task: ' + data)
 
       this.$q.notify({

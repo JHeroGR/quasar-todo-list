@@ -37,7 +37,7 @@ module.exports = configure(function (/* ctx */) {
       'material-icons' // optional, you are not bound to it
     ],
     bin: {
-      linuxAndroidStudio: '/home/jhero/.local/share/JetBrains/Toolbox/apps/android-studio/bin/studio.sh'
+      linuxAndroidStudio: '/mnt/c/Program Files/Android/Android Studio/bin/studio64.exe'
     },
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-vite/quasar-config-js#build

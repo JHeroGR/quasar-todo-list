@@ -4,7 +4,8 @@ const TaskList = {
       category: 'Shopping',
       tasks: [
         { name: 'Tomatoes', done: false },
-        { name: 'Bananas', done: false }
+        { name: 'Bananas', done: false },
+        { name: 'Lettuce', done: true }
       ]
     },
     {
